@@ -98,8 +98,8 @@ module.exports = function (ctx) {
       workboxPluginMode: 'GenerateSW', // 'GenerateSW' or 'InjectManifest'
       workboxOptions: {}, // only for GenerateSW
       manifest: {
-        name: 'Quasar App',
-        short_name: 'Quasar App',
+        name: 'RoninDean Ent.',
+        short_name: 'RoninDean',
         description: 'RoninDean Enterprises App',
         display: 'standalone',
         orientation: 'portrait',

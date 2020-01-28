@@ -1,1 +1,27 @@
 // app global css in Sass form
+@import 'src/css/colors.sass';
+@import 'src/css/fonts.sass';
+
+@keyframes fadein 
+        from
+            opacity: 0
+        to
+            opacity: 1
+
+.q-header
+    background-image: $dark-gradient
+    .q-btn
+        font-weight: 300
+        letter-spacing: 2px
+
+.hero 
+    .logo
+    opacity: 0
+    animation: fadein 5s ease 1s 1 forwards
+    .q-parallax__media img
+        opacity: 0.2
+.main-section
+    height: 90vh
+    border: 1px solid red
+
+
