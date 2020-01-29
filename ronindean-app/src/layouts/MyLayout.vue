@@ -1,6 +1,6 @@
 <template>
   <q-layout view="hHh lpr fFf">
-    <q-header reveal elevated>
+    <q-header  fixed>
       <q-toolbar>
       <q-space />
       <q-tabs :refs="$refs" >
