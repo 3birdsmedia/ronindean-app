@@ -14,6 +14,32 @@
         letter-spacing: 2px
         color: $light-grey
 
+.motif
+    border: 1px solid darken($primary-light, 10%)
+    transform: rotate(-45deg)
+    &:after
+        content: " "
+        border: 1px solid darken($primary-light, 10%)
+        display: block
+        width: 90%
+        height: 90%
+        left: 5%
+        top: 5%
+        position: relative
+.motif.large
+    width: 500px
+    height: 500px
+    position: absolute
+    z-index: 0
+    right: -200px
+    bottom: -200px
+.motif.small
+    width: 250px
+    height: 250px
+    position: absolute
+    z-index: 0
+    left: -100px
+    top: -100px
 
 .hero 
     background-image: url(../assets/hero-bg.jpg)
@@ -22,7 +48,7 @@
     animation: color-fade 3s ease 0.5s 1 forwards
     h2, span
         font-family: $serif
-        font-size: 1.6em
+        font-size: 1.8em
     .logo
         opacity: 0
         animation: fadein 5s ease 1s 1 forwards
@@ -31,6 +57,8 @@
 .main-section
     height: 90vh
     border-bottom: 1px solid rgba(0,0,0,0.05)
+    position: relative
+    overflow: hidden
 
     .service-list li
         width: 50%

@@ -11,12 +11,14 @@
         <div class="col-8 col-lg-6">
           <div class="full-width">
             <img alt="RoninDean Enterprises Logo" src="~assets/ronindean-logo-full.svg" class="logo">
-            <h2 class="full-width q-ma-none">Elegant, exceptional virtual assistant firm</h2>
-            <span>• EXECUTIVE • PERSONAL • CONCIERGE • TEAM • TALENT/INFLUENCERS •</span>
+            <h2 class="full-width q-ma-none text-italic">Your elegant, exceptional virtual assistant firm tailor made for your needs</h2>
+            <!--span class="tag self-end hide">• EXECUTIVE • PERSONAL • CONCIERGE • TEAM • TALENT/INFLUENCERS •</span-->
           </div>
         </div>
+        <div class="motif large"></div>
+        <div class="motif small"></div>
     </div>
-    <div class="main-section window-height window-width" ref="Services">
+    <div class="main-section window-height window-width" ref="services">
       <div class="row justify-between">
         <q-parallax :height="wh" src="https://images.pexels.com/photos/265152/pexels-photo-265152.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260">
           <ul>
