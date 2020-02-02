@@ -3,6 +3,13 @@
 @import 'src/css/fonts.sass';
 @import 'src/css/animations.sass';
 
+#q-app
+    //Needed for Paralax 
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    perspective: 2px;
+
 .q-page-container
     padding-top: 0 !important
 .q-header
@@ -54,15 +61,46 @@
         animation: fadein 5s ease 1s 1 forwards
     .q-parallax__media img
         opacity: 0.2
+
+.parallax 
+    position: relative
+    min-height: 100vh
+    overflow: hidden
+
+.parallax::after 
+    content: " "
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+
+    transform: translateZ(-1px) scale(1.5)
+    background-size: cover
+    background-position: center
+    z-index: -1
+
+.services::after
+    background-image: url("../assets/services-bg.jpg")
+
 .main-section
-    height: 90vh
+    min-height: 100vh
     border-bottom: 1px solid rgba(0,0,0,0.05)
     position: relative
     overflow: hidden
 
+.services 
+    color: $primary-light
+    font-weight: 300
     .service-list li
         width: 50%
         display: inline-block
+        padding: 5px 20px
+    .service-list li:nth-child(even)
+        text-align: left
+    .service-list li:nth-child(odd)
+        text-align: right
 h2
     font-family: $serif
+
 

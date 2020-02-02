@@ -9,3 +9,56 @@
             background-color: rgba(255,255,255,0)
         to
             background-color: rgba(255,255,255,1)
+
+$anim-size: 200px
+$anim-vars: all 1s ease 0.5s
+
+.anim 
+    opacity: 0
+    transition: $anim-vars
+ 
+.anim.in-viewport 
+    opacity: 1
+
+.anim-delay 
+    opacity: 0
+    transition: all 1s ease 1.5s
+ 
+.anim-delay.in-viewport 
+    opacity: 1
+
+.anim-left 
+    opacity: 0
+    margin-left: $anim-size
+    transition: $anim-vars
+ 
+.anim-left.in-viewport 
+    opacity: 1
+    margin-left: 0px
+
+.anim-right 
+    opacity: 0
+    margin-left: -($anim-size)
+    transition: $anim-vars
+ 
+.anim-right.in-viewport 
+    opacity: 1
+    margin-left: 0px
+
+.anim-down 
+    opacity: 0
+    margin-top: -($anim-size)
+    transition: $anim-vars
+ 
+.anim-down.in-viewport 
+    opacity: 1
+    margin-top: 0px
+
+.anim-up 
+    opacity: 0
+    margin-bottom: -($anim-size)
+    transition: $anim-vars
+ 
+.anim-up.in-viewport 
+    opacity: 1
+    margin-bottom: 0px
