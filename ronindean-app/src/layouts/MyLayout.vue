@@ -1,27 +1,44 @@
 <template>
   <q-layout view="hHh lpr fFf">
-    <q-header  fixed>
+    <q-header >
       <q-toolbar>
-      <q-space />
-      <q-tabs :refs="$refs" >
-        <q-tab name="Services" >
-            Services
-        </q-tab>
-        <q-tab name="About">
-            About
-        </q-tab>
-        <q-tab name="Pricing">
-            Pricing
-        </q-tab>
-        <q-tab name="Contact">
-            Contact
-        </q-tab>
-      </q-tabs>
+        <q-space />
+        <q-item clickable flat @click="drawer = !drawer" round dense icon="menu" class="menu-btn"/>
       </q-toolbar>
+
     </q-header>
     <q-page-container>
       <router-view />
+      <!--
+        Right side Drawer;
+        Notice the HTML Attributes on <drawer> element
+      -->
+      <q-drawer
+        side="right"
+        overlay
+        v-model="drawer"
+        show-if-above
+        :width="300"
+        :breakpoint="992"
+        content-class="nav"
+      >
+      <q-list :refs="$refs" class="column text-right" >
+        <q-item clickable name="Services" >
+            <q-item-section>Services</q-item-section>
+        </q-item>
+        <q-item clickable name="About">
+            <q-item-section>About</q-item-section>
+        </q-item>
+        <q-item clickable name="Pricing">
+            <q-item-section>Pricing</q-item-section>
+        </q-item>
+        <q-item clickable name="Contact">
+            <q-item-section>Contact</q-item-section>
+        </q-item>
+      </q-list>
+      </q-drawer>
     </q-page-container>
+
   </q-layout>
 </template>
 
@@ -31,7 +48,8 @@ export default {
 
   data () {
     return {
-      leftDrawerOpen: false
+      drawer: true
+    // leftDrawerOpen: false
     }
   }
 }

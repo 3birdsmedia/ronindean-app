@@ -12,15 +12,20 @@
 
 .q-page-container
     padding-top: 0 !important
-.q-header
+.q-drawer, .q-header
     background-color: rgba(254,229,211, 0)
     background-image: $light-gradient
-    .q-tab
+    .menu-btn
+        color: $primary-dark
+    .q-item
         //font-weight: 100
         font-family: $serif
         letter-spacing: 2px
         color: $light-grey
+        text-transform: uppercase
 
+.q-drawer__backdrop
+    background: none !important
 .motif
     border: 1px solid darken($primary-light, 10%)
     transform: rotate(-45deg)
@@ -82,6 +87,8 @@
 
 .services::after
     background-image: url("../assets/services-bg.jpg")
+.pricing::after
+    background-image: url("../assets/second-bg.jpg")
 
 .main-section
     min-height: 100vh
@@ -100,6 +107,8 @@
         text-align: left
     .service-list li:nth-child(odd)
         text-align: right
+.pricing
+    font-size: 1.2em
 h2
     font-family: $serif
 
