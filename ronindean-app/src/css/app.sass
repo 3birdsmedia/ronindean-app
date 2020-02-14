@@ -9,7 +9,9 @@
     overflow-x: hidden
     overflow-y: auto
     perspective: 2px
-
+.q-btn 
+    border-radius: 0
+    background: $primary-median
 .q-page-container
     padding-top: 0 !important
 .q-drawer,.q-header
@@ -59,7 +61,8 @@
     z-index: 0
     left: -100px
     top: -100px
-
+// .responsive-image
+//     width: 90%
 .hero 
     background-image: url(../assets/hero-bg.jpg)
     background-repeat: none
@@ -68,11 +71,19 @@
     h2, span
         font-family: $serif
         font-size: 1.8em
+        line-height: 1
+        @media screen and (max-width: $breakpoint-sm)
+            font-size: 1.2em
     .logo
         opacity: 0
         animation: fadein 5s ease 1s 1 forwards
     .q-parallax__media img
         opacity: 0.2
+    .divider
+        border-right: 1px solid $primary-dark
+        @media screen and (max-width: $breakpoint-sm)
+            border-bottom: 1px solid $primary-dark
+            border-right: 0px
 
 .parallax 
     position: relative
@@ -148,12 +159,14 @@
             padding: 0 10px
             li
                 padding: 0px 0 10px
-    // .service-list li:nth-child(even)
-    //     text-align: left
-    // .service-list li:nth-child(odd)
-    //     text-align: right
+.about
+    ul
+        li
+            list-style: none
 .pricing
     font-size: 1.2em
+    .price
+        border-bottom: 1px solid $primary-dark
 h2
     font-family: $serif
 
