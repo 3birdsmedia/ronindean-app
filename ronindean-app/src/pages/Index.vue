@@ -32,38 +32,29 @@
       </q-toolbar>
 
     </q-header>
-    <!--div class="main-section window-height window-width">
-        <div class="col-8 col-lg-6 items-center">
-            <img alt="RoninDean Enterprises Logo" src="~assets/ronindean-logo-full.svg" class="logo">
-            <h2 class="full-width text-center q-ma-none">Elegant, exceptional virtual assistant firm</h2>
-            <span>• EXECUTIVE • PERSONAL • CONCIERGE • TEAM • TALENT/INFLUENCERS •</span>
-        </div>
-    </div-->
     <div class="hero main-section window-width text-center flex items-center row justify-center" ref="hero">
-    <!-- <q-parallax :height="wh">
-      <template v-slot:media>
-        <video :height="wh" poster="https://cdn.quasar.dev/img/polina.jpg" autoplay loop muted>
-          <source type="video/mp4" src="~assets/blurred-hero.mp4">
-        </video>
-      </template> -->
-        <div class="col-11 col-sm-8 col-lg-6 q-pt-xl q-pt-none-sm">
+    <!-- <q-parallax :height="wh">-->
+        <div class="col-11 col-sm-8 col-lg-6 q-pt-xl q-pt-none-sm logo-container">
           <div class="full-width">
             <img alt="RoninDean Enterprises Logo" src="~assets/ronindean-logo-full.svg" class="logo">
-            <h2 class="full-width q-ma-none text-italic anim" v-in-viewport>Your exceptional and elegant virtual assistant, supporting you the right way</h2>
+            <h2 class="full-width q-ma-none text-italic anim" v-in-viewport>Your exceptional and elegant virtual assistant, supporting the business behind your business.</h2>
           </div>
         </div>
-        <div class="full-width flex row">
-          <div class="col-12 col-md-6 q-px-lg divider anim" v-in-viewport>
+        <div class="full-width flex row justify-center">
+          <div class="col-12 col-md-4 q-px-lg divider anim" v-in-viewport>
             <q-btn class="q-ma-lg q-px-md" size="lg" @click="scrollMeTo('services')" v-ripple>Learn More</q-btn>
-            <p>Tailored assistant services to give you time back where you need it most executives, entrepreneurs, teams, talent/influencers.</p>
+            <p>Tailored assistant services to give you time back where you need it most.</p>
           </div>
-          <div class="col-12 col-md-6 q-px-lg anim" v-in-viewport>
+          <div class="col-12 col-md-4 q-px-lg anim" v-in-viewport>
             <q-btn class="q-ma-lg q-px-md" size="lg" @click="scrollMeTo('contact')" v-ripple>Request a meeting</q-btn>
-            <p>Allowing executives, entrepreneurs, teams, talent and influencers to focus on their goals</p>
+            <p>Allowing executives, entrepreneurs, teams, talent and influencers to focus on their goals.</p>
           </div>
         </div>
-        <div class="motif large anim-up" v-in-viewport></div>
-        <div class="motif small anim-down" v-in-viewport></div>
+        <video :height="wh" poster="~assets/blurred-hero.jpg" autoplay loop muted class="video-bg">
+          <source type="video/webm" src="~assets/blurred-hero.webm">
+          <!--source type="video/ogv" src="~assets/blurred-hero.ogv"-->
+          <source type="video/mp4" src="~assets/blurred-hero.mp4">
+        </video>
     <!-- </q-parallax> -->
     </div>
     <div class="main-section window-width parallax services row justify-center" ref="services" id="services">
@@ -156,11 +147,11 @@
     <div class="main-section window-width flex items-center row justify-center parallax pricing" ref="pricing" id="pricing">
       <div class="anim" v-in-viewport>
         <h2 class="full-width text-center anim q-pb-lg" v-in-viewport>PRICING</h2>
-        <p class="text-large q-px-xl">Pricing is customized to your needs, time required and length of service. Prices below are for reference based on calendar week and subject to change.</p>
+        <p class="text-large text-center q-px-xl">Pricing is customized to your needs, time required and length of service. Prices below are for reference based on calendar week and subject to change.</p>
       </div>
-      <div class=" q-px-lg row items-center">
+      <div class=" q-px-lg row items-center justify-center">
         <div class="row justify-center col-10">
-          <div class="flex items-center row justify-center anim price q-pa-xl-md q-pa-sm" v-in-viewport>
+          <div class="flex items-center row full-width justify-center anim price q-pa-xl-md q-pa-lg" v-in-viewport>
             <div class="col-12 col-sm-4">
               <q-img
                 src="~assets/helpingprice.jpg"
@@ -171,15 +162,15 @@
               >
               </q-img>
             </div>
-            <div class="col-12 col-sm-8 q-px-lg">
+            <div class="col-12 col-sm-4 q-px-lg">
               <h3 class="q-ma-none q-pt-lg">Hands To Serve</h3>
               <p>Small weekly tasks and projects to give you the breathing room you need to focus on your priorities<br/>
                 <span class="text-italic">Starting At $350/week</span>
               </p>
             </div>
           </div>
-          <div class="flex items-center row justify-center anim price q-pa-xl-md q-pa-sm" v-in-viewport>
-            <div class="col-12 col-sm-8 q-px-lg text-right">
+          <div class="flex items-center row full-width justify-center anim price q-pa-xl-md q-pa-lg" v-in-viewport>
+            <div class="col-12 col-sm-4 q-px-lg text-right">
               <h3 class="q-ma-none q-pt-lg">Another Me</h3>
               <p>Working as you or for you to interact with your team, inbox and to-do list to free you up for the freedoms you were originally after.<br/>
               <span class="text-italic">Starting At $700/week</span>
@@ -196,7 +187,7 @@
               </q-img>
             </div>
           </div>
-          <div class="flex items-center row justify-center anim price q-pa-xl-md q-pa-sm" v-in-viewport>
+          <div class="flex items-center row full-width justify-center anim price q-pa-xl-md q-pa-lg" v-in-viewport>
             <div class="col-12 col-sm-4">
               <q-img
                 src="~assets/executiveprice.jpg"
@@ -207,14 +198,14 @@
               >
               </q-img>
             </div>
-            <div class="col-12 col-sm-8 q-px-lg">
+            <div class="col-12 col-sm-4 q-px-lg">
               <h3 class="q-ma-none q-pt-lg">Executive/Personal</h3>
               <p>Operational and strategic assistants needed to run your business or life on your terms.<br/>
                 <span class="text-italic">Starting At $925/week</span></p>
             </div>
           </div>
-          <div class="flex items-center row justify-center anim price q-pa-xl-md q-pa-sm" v-in-viewport>
-            <div class="col-12 col-sm-8 q-px-lg">
+          <div class="flex items-center row full-width justify-center anim price q-pa-xl-md q-pa-lg" v-in-viewport>
+            <div class="col-12 col-sm-4 q-px-lg">
               <h3 class="q-ma-none q-pt-lg">Shared Assistant</h3>
               <p>Built to support your team’s collective and individual needs to ensure synergy and consistency within the organization.<br/>
               <span class="text-italic">Starting At $200 Per Person Per Week</span>
@@ -233,37 +224,49 @@
           </div>
         </div>
       </div>
-      <div class="anim-up col-12" v-in-viewport>
-        <span class="">Project & Hourly Rates Available</span>
+      <div class="anim-left col-12 full-width text-center q-pb-lg" v-in-viewport>
+        <span class="text-italic">Project & Hourly Rates Available</span>
       </div>
     </div>
-    <div class="main-section window-width flex items-center row justify-center" ref="contact" id="contact">
-      <div class="col-10 col-md-6">
-        <h2>Request a meeting</h2>
+    <div class="main-section window-width flex items-center row justify-center contact items-strech" ref="contact" id="contact">
+      <div class="col-10 col-md-5 dark-bg full-height">
+        <div class="contact-logo relative-position full-width text-center">
+          <img alt="RoninDean Enterprises Logo" src="~assets/ronindean-logo-outline.svg" class="logo">
+        </div>
       </div>
-      <div class="col-10 col-md-6 anim" v-in-viewport>
-        <div class="q-pa-md" style="max-width: 400px">
+      <div class="col-10 col-md-5 anim light" v-in-viewport>
+        <h2>Request a meeting</h2>
+        <!-- <p class="text-large">Use the form on this page or send us an <a class="light" href="mailto:info@ronindean.com" title="Mail RoninDean">email</a>
+        </p> -->
+        <p>We'd love to learn more about how we can best serve you, please send us an email at <a class="light" href="mailto:info@ronindean.com" title="Mail RoninDean">info@ronindean.com</a>. </p>
+        <p>To learn more about RoninDean follow us on Instagram <a href="https://www.instagram.com/ronindean/">&#64;ronindean</a>
+        </p>
+        <div class="q-pa-md text-large">
           <q-form
             @submit="onSubmit"
             class="q-gutter-md"
           >
             <q-input
+              dark
               v-model="name"
               label="Your name *"
               hint="Name and Last Name"
               :rules="[ val => val && val.length > 0 || 'Please type something']"
             />
             <q-input
+              dark
               v-model="company"
               label="Your company's name"
             />
             <q-input
+              dark
               v-model="email"
               type="email"
               label="Your Email Address*"
               required
             />
             <q-input
+              dark
               v-model="tel"
               type="tel"
               label="Your Phone Number*"
@@ -272,15 +275,11 @@
               hint="Format: ###.###.####"
             />
             <div>
-              <q-btn label="Submit" type="submit" color="primary"/>
+              <q-btn class="q-ma-lg q-px-md" size="lg" v-ripple label="Submit" type="submit"/>
             </div>
           </q-form>
           </div>
-        <p>
-        Message: We are grateful for your interest and honor your time. We will respond to you within 24 hours of receipt to schedule our time together.
-
-        In the meantime, follow us to learn more! (Instagram)
-        </p>
+        <div class="motif large anim-up" v-in-viewport></div>
       </div>
     </div>
           <!--
@@ -319,37 +318,51 @@
 import Vue from 'vue'
 import inViewportDirective from 'vue-in-viewport-directive'
 import { scroll } from 'quasar'
+import axios from 'axios'
 Vue.directive('in-viewport', inViewportDirective)
 const { setScrollPosition } = scroll
-
 export default {
   name: 'Index',
   methods: {
     scrollMeTo (refName) {
-      console.log(refName)
+      // console.log(refName)
       let el = this.$refs[refName]
-      console.log(el)
+      // console.log(el)
       const target = document.getElementById('q-app') // getScrollTarget(el)
       const offset = el.offsetTop
       const duration = 1000
       setScrollPosition(target, offset, duration)
     },
     onSubmit () {
-      if (this.accept !== true) {
-        this.$q.notify({
-          color: 'red-5',
-          textColor: 'white',
-          icon: 'warning',
-          message: 'You need to accept the license and terms first'
-        })
-      } else {
-        this.$q.notify({
-          color: 'green-4',
-          textColor: 'white',
-          icon: 'cloud_done',
-          message: 'Submitted'
-        })
+      // let formData = new FormData(document.getElementById('contact_us'))
+      console.log(this.name)
+      let successMessage = 'We are grateful for your interest and honor your time. We will respond to you within 24 hours of receipt to schedule our time together.'
+      // axios.get('https://api.ronindean.com/rest/session/token', axiosConfig)
+      let axiosConfig = {
+        headers: {
+          'Content-Type': 'application/json; charset=UTF-8',
+          'Access-Control-Allow-Methods': '*',
+          'Access-Control-Allow-Headers': '*',
+          'Access-Control-Allow-Origin': '*',
+          'X-CSRF-Token': 'a75wvkZ0VOr1EiPVAikfSsPlvrXPm0F79JsgiMJUrmU',
+          'Authorization': 'Basic bXNlZ3VyYTpLUGRyZWFtMCE='
+        }
       }
+      let postData = {
+        'contact_form': [{ 'target_id': 'contact_us' }],
+        'name': [{ 'value': this.name }],
+        'mail': [{ 'value': this.email }],
+        'subject': [{ 'value': 'You have an inquiry' }],
+        'message': [{ 'value': this.name + ' from ' + this.company + ' wants to know more about RoninDean, contact them at ' + this.email + ' | ' + this.tel }]
+      }
+      axios.post('https://api.ronindean.com/contact_message?_format=json', postData, axiosConfig)
+        .then(function (response) {
+          console.log(successMessage)
+          console.log(response)
+        })
+        .catch(function (error) {
+          console.log(error)
+        })
     }
   },
   data () {
