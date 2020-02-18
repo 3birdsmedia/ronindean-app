@@ -1,8 +1,8 @@
 {
   "name": "ronindean-app",
   "version": "0.0.1",
-  "description": "RoninDean Enterprises App",
-  "productName": "RoninDean Ent.",
+  "description": "RoninDean Enterprises, Your exceptional and elegant virtual assistant, supporting the business behind your business.",
+  "productName": "RoninDean",
   "cordovaId": "com.ronindean.app",
   "capacitorId": "",
   "author": "Marco Segura",

@@ -1,12 +1,14 @@
 <template>
   <q-page class="flex flex-center">
-    <q-header reveal elevated>
-      <q-toolbar class="bg-black text-white mobile-hide" q-screen.lt.md.hide>
-        <q-icon
-          name="facebook"
-          size="14px"
-          class="q-ml-xs"
-        />
+    <q-header reveal height-hint="120">
+      <q-toolbar wrap id="nav" class="bg-black text-white mobile-hide" v-bind:class="{show : showNav}">
+        <a href="https://www.instagram.com/ronindean/" target="_blank">
+          <q-icon clickable
+            name="fab fa-instagram"
+            size="24px"
+            class="q-ml-xs"
+          />
+        </a>
         <q-space/>
         <q-item clickable name="Services" >
             <q-item-section @click="scrollMeTo('services')">Services</q-item-section>
@@ -24,20 +26,52 @@
 
       <q-toolbar class="desktop-hide">
         <q-space />
-        <q-item clickable flat @click="drawer = !drawer" round dense class="menu-btn"/>
-        <q-icon
-          name="menu"
-          size="2em"
-        />
+        <q-item clickable flat @click="drawer = !drawer" round dense class="menu-btn">
+        <!-- <q-item clickable flat @click="revealNav()" round dense class="menu-btn"-->
+          <q-icon
+            name="menu"
+            size="2em"
+          />
+        </q-item>
       </q-toolbar>
 
     </q-header>
+      <q-drawer
+        side="right"
+        overlay
+        v-model="drawer"
+        content-class="nav"
+      >
+      <q-list :refs="$refs" class="column text-right" >
+        <q-item clickable name="Services" >
+            <q-item-section @click="scrollMeTo('services')">Services</q-item-section>
+        </q-item>
+        <q-item clickable name="About">
+            <q-item-section @click="scrollMeTo('about')">About</q-item-section>
+        </q-item>
+        <q-item clickable name="Pricing">
+            <q-item-section @click="scrollMeTo('pricing')">Pricing</q-item-section>
+        </q-item>
+        <q-item clickable name="Contact">
+            <q-item-section @click="scrollMeTo('contact')">Contact</q-item-section>
+        </q-item>
+        <q-item class="justify-end">
+          <a href="https://www.instagram.com/ronindean/" target="_blank">
+            <q-icon clickable
+              name="fab fa-instagram"
+              size="24px"
+              class="q-ml-xs"
+            />
+          </a>
+        </q-item>
+      </q-list>
+      </q-drawer>
     <div class="hero main-section window-width text-center flex items-center row justify-center" ref="hero">
     <!-- <q-parallax :height="wh">-->
-        <div class="col-11 col-sm-8 col-lg-6 q-pt-xl q-pt-none-sm logo-container">
+        <div class="col-12 col-sm-8 col-lg-6 q-pt-xl logo-container">
           <div class="full-width">
             <img alt="RoninDean Enterprises Logo" src="~assets/ronindean-logo-full.svg" class="logo">
-            <h2 class="full-width q-ma-none text-italic anim" v-in-viewport>Your exceptional and elegant virtual assistant, supporting the business behind your business.</h2>
+            <h2 class="full-width q-ma-none q-px-sm q-px-none-md text-italic anim" v-in-viewport>Your exceptional and elegant virtual assistant, supporting the business behind your business.</h2>
           </div>
         </div>
         <div class="full-width flex row justify-center">
@@ -129,9 +163,9 @@
         >
         </q-img>
       </div>
-      <div class="col-10 col-md-6 text-center anim-up" v-in-viewport>
+      <div class="col-11 col-md-6 text-center anim-up" v-in-viewport>
         <h2>WORK SMARTER NOT HARDER</h2>
-          <ul>
+          <ul class="q-pa-none">
             <li>No "One Size Fits All"</li>
             <li>Our assistance is tailor-made to your needs</li>
             <li>We cater to you: The Entrepreneur, The Small Business, The Influencer</li>
@@ -146,11 +180,11 @@
     </div>
     <div class="main-section window-width flex items-center row justify-center parallax pricing" ref="pricing" id="pricing">
       <div class="anim" v-in-viewport>
-        <h2 class="full-width text-center anim q-pb-lg" v-in-viewport>PRICING</h2>
+        <h2 class="full-width text-center anim" v-in-viewport>PRICING</h2>
         <p class="text-large text-center q-px-xl">Pricing is customized to your needs, time required and length of service. Prices below are for reference based on calendar week and subject to change.</p>
       </div>
-      <div class=" q-px-lg row items-center justify-center">
-        <div class="row justify-center col-10">
+      <div class=" q-px-sm row items-center justify-center">
+        <div class="row justify-center col-12 col-sm-10">
           <div class="flex items-center row full-width justify-center anim price q-pa-xl-md q-pa-lg" v-in-viewport>
             <div class="col-12 col-sm-4">
               <q-img
@@ -199,7 +233,7 @@
               </q-img>
             </div>
             <div class="col-12 col-sm-4 q-px-lg">
-              <h3 class="q-ma-none q-pt-lg">Executive/Personal</h3>
+              <h3 class="q-ma-none q-pt-lg">Executive/<wbr>Personal</h3>
               <p>Operational and strategic assistants needed to run your business or life on your terms.<br/>
                 <span class="text-italic">Starting At $925/week</span></p>
             </div>
@@ -235,12 +269,22 @@
         </div>
       </div>
       <div class="col-10 col-md-5 anim light" v-in-viewport>
-        <h2>Request a meeting</h2>
+        <h2>Request a Meeting</h2>
         <!-- <p class="text-large">Use the form on this page or send us an <a class="light" href="mailto:info@ronindean.com" title="Mail RoninDean">email</a>
         </p> -->
-        <p>We'd love to learn more about how we can best serve you, please send us an email at <a class="light" href="mailto:info@ronindean.com" title="Mail RoninDean">info@ronindean.com</a>. </p>
-        <p>To learn more about RoninDean follow us on Instagram <a href="https://www.instagram.com/ronindean/">&#64;ronindean</a>
-        </p>
+        <p>We would love to learn more about how we can best serve you. Please send us an email at <a class="light" href="mailto:info@ronindean.com" title="Mail RoninDean">info@ronindean.com or use the form below</a>. </p>
+
+        <q-dialog v-model="dialog">
+          <q-card class="q-pa-sm">
+            <q-card-section>
+              <p class="q-mb-none">We are grateful for your interest and honor your time. We will respond to you within 24 hours of receipt to schedule our meeting.</p>
+              <p class="text-right q-mb-none text-uppercase">~ Ronin<b>Dean</b></p>
+            </q-card-section>
+            <q-card-actions align="center">
+              <q-btn flat label="OK" v-close-popup />
+            </q-card-actions>
+          </q-card>
+        </q-dialog>
         <div class="q-pa-md text-large">
           <q-form
             @submit="onSubmit"
@@ -249,14 +293,14 @@
             <q-input
               dark
               v-model="name"
-              label="Your name *"
-              hint="Name and Last Name"
+              label="Your Name *"
+              hint="First Name and Last Name"
               :rules="[ val => val && val.length > 0 || 'Please type something']"
             />
             <q-input
               dark
               v-model="company"
-              label="Your company's name"
+              label="Your Company's Name"
             />
             <q-input
               dark
@@ -275,42 +319,18 @@
               hint="Format: ###.###.####"
             />
             <div>
-              <q-btn class="q-ma-lg q-px-md" size="lg" v-ripple label="Submit" type="submit"/>
+              <q-btn :loading="sending" class="q-ma-lg q-px-md" size="lg" v-ripple label="Submit" type="submit"/>
             </div>
           </q-form>
+        <p>To learn more about RoninDean follow us on Instagram <a href="https://www.instagram.com/ronindean/" target="_blank">&#64;ronindean</a>
+        </p>
           </div>
         <div class="motif large anim-up" v-in-viewport></div>
       </div>
     </div>
-          <!--
-        Right side Drawer;
-        Notice the HTML Attributes on <drawer> element
-      -->
-      <q-drawer
-        side="right"
-        overlay
-        v-model="drawer"
-        show-if-above
-        :width="300"
-        :breakpoint="992"
-        class="desktop-hide"
-        content-class="nav"
-      >
-      <q-list :refs="$refs" class="column text-right" >
-        <q-item clickable name="Services" >
-            <q-item-section>Services</q-item-section>
-        </q-item>
-        <q-item clickable name="About">
-            <q-item-section>About</q-item-section>
-        </q-item>
-        <q-item clickable name="Pricing">
-            <q-item-section>Pricing</q-item-section>
-        </q-item>
-        <q-item clickable name="Contact">
-            <q-item-section>Contact</q-item-section>
-        </q-item>
-      </q-list>
-      </q-drawer>
+      <q-page-scroller position="bottom-right" :scroll-offset="150" :offset="[18, 18]">
+        <q-btn fab icon="keyboard_arrow_up" color="primary" />
+      </q-page-scroller>
    </q-page>
 </template>
 <script>
@@ -319,24 +339,46 @@ import Vue from 'vue'
 import inViewportDirective from 'vue-in-viewport-directive'
 import { scroll } from 'quasar'
 import axios from 'axios'
+import { fasFont } from '@quasar/extras/fontawesome-v5'
 Vue.directive('in-viewport', inViewportDirective)
-const { setScrollPosition } = scroll
+const { getScrollTarget, setScrollPosition } = scroll
 export default {
   name: 'Index',
+  create () {
+    this.fasFont = fasFont
+  },
   methods: {
     scrollMeTo (refName) {
-      // console.log(refName)
+      this.drawer = false
+      console.log(refName)
       let el = this.$refs[refName]
-      // console.log(el)
-      const target = document.getElementById('q-app') // getScrollTarget(el)
+      console.log(el)
+      // const target = document.getElementById('q-app') // getScrollTarget(el)
+      const target = getScrollTarget(el)
+      console.log(target)
       const offset = el.offsetTop
+      console.log(offset)
       const duration = 1000
       setScrollPosition(target, offset, duration)
     },
+    revealNav () {
+      let nav = document.getElementById('nav')
+      console.log(nav.classList.contains('show'))
+      if (nav.classList.contains('show')) {
+        this.showNav = false
+      } else {
+        this.showNav = true
+      }
+    },
     onSubmit () {
       // let formData = new FormData(document.getElementById('contact_us'))
-      console.log(this.name)
-      let successMessage = 'We are grateful for your interest and honor your time. We will respond to you within 24 hours of receipt to schedule our time together.'
+      // console.log(this.name)
+      let showmessage = () => {
+        this['sending'] = false
+        this.dialog = true
+      }
+      this['sending'] = true
+      // let successMessage = 'We are grateful for your interest and honor your time. We will respond to you within 24 hours of receipt to schedule our time together.'
       // axios.get('https://api.ronindean.com/rest/session/token', axiosConfig)
       let axiosConfig = {
         headers: {
@@ -357,8 +399,9 @@ export default {
       }
       axios.post('https://api.ronindean.com/contact_message?_format=json', postData, axiosConfig)
         .then(function (response) {
-          console.log(successMessage)
-          console.log(response)
+          showmessage()
+          // console.log(successMessage)
+          // console.log(response)
         })
         .catch(function (error) {
           console.log(error)
@@ -371,9 +414,12 @@ export default {
       company: null,
       email: null,
       tel: null,
+      showNav: false,
+      navBar: document.getElementById('nav'),
       wh: window.innerHeight,
-      position: 300,
-      drawer: true
+      drawer: false,
+      sending: false,
+      dialog: false
     }
   }
 }

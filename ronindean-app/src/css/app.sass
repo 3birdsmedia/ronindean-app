@@ -3,19 +3,24 @@
 @import 'src/css/fonts.sass';
 @import 'src/css/animations.sass';
 
-#q-app
-    //Needed for Paralax 
-    height: 100vh
-    overflow-x: hidden
-    overflow-y: auto
-    perspective: 2px
+// #q-app
+//     //Needed for Paralax 
+//     height: 100vh
+//     overflow-x: hidden
+//     overflow-y: auto
+//     perspective: 2px
+.q-body--prevent-scroll
+    position: relative
+a, a:visited
+    color: $primary-dark
+    text-decoration: none
 .q-btn 
     border-radius: 0
     background: $primary-median
 .q-page-container
     padding-top: 0 !important
-.q-drawer,.q-header
-    background-color: rgba(254,229,211, 0)
+.q-drawer
+    background-color: $primary-light
     background-image: $light-gradient
     .q-icon
         color: $primary-dark
@@ -26,13 +31,17 @@
         color: $light-grey
         text-transform: uppercase
 .q-header
+    background-color: $dark
     .q-item
         //font-weight: 100
         font-family: $serif
         letter-spacing: 2px
         color: $primary-light
         text-transform: uppercase
-
+.desk-nav
+    height: 0
+    @media screen and (min-width: $breakpoint-sm)
+        height: auto
 .q-drawer__backdrop
     background: none !important
 .motif
@@ -51,7 +60,7 @@
     width: 500px
     height: 500px
     position: absolute
-    z-index: 0
+    z-index: -1
     right: -200px
     bottom: -200px
 .motif.small
@@ -72,6 +81,7 @@
     animation: color-fade 3s ease 0.5s 1 forwards
     .logo-container
         background: radial-gradient(circle closest-corner at center top, rgba(255,255,255,1) 0%, transparent 100%)
+        margin-top: -10px
     div
         z-index: 2
     h2, span
@@ -90,7 +100,7 @@
             border-right: 0px
     .video-bg
         position: fixed
-        z-index: 1
+        z-index: 0
         opacity: 0.4
         @media (min-aspect-ratio: 16/9)
             width: 100%
@@ -128,6 +138,7 @@
     border-bottom: 1px solid rgba(0,0,0,0.05)
     position: relative
     overflow: hidden
+    z-index: 2
 
 .services 
     color: $primary-light
@@ -191,8 +202,6 @@
         border: 0px
 .contact
     background: $dark
-    a:visited
-        color: $primary-light
     .contact-logo:after
         display: block
         position: absolute
@@ -206,7 +215,10 @@
     .contact-logo
         .logo
             width: 90%
+.q-card
+    background: $primary-light            
 h2
     font-family: $serif
-
+.q-page-scroller
+    z-index: 5
 
