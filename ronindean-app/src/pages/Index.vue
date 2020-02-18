@@ -70,16 +70,16 @@
     <!-- <q-parallax :height="wh">-->
         <div class="col-12 col-sm-8 col-lg-6 q-pt-xl logo-container">
           <div class="full-width">
-            <img alt="RoninDean Enterprises Logo" src="~assets/ronindean-logo-full.svg" class="logo">
-            <h2 class="full-width q-ma-none q-px-sm q-px-none-md text-italic anim" v-in-viewport>Your exceptional and elegant virtual assistant, supporting the business behind your business.</h2>
+            <img alt="RoninDean Enterprises Logo" src="~assets/ronindean-logo-full.svg" class="logo q-pt-lg">
+            <h2 class="full-width q-ma-none q-px-sm q-px-none-md text-italic anim" v-in-viewport.once>Your exceptional and elegant virtual assistant, supporting the business behind your business.</h2>
           </div>
         </div>
         <div class="full-width flex row justify-center">
-          <div class="col-12 col-md-4 q-px-lg divider anim" v-in-viewport>
+          <div class="col-12 col-md-4 q-px-lg divider anim" v-in-viewport.once>
             <q-btn class="q-ma-lg q-px-md" size="lg" @click="scrollMeTo('services')" v-ripple>Learn More</q-btn>
             <p>Tailored assistant services to give you time back where you need it most.</p>
           </div>
-          <div class="col-12 col-md-4 q-px-lg anim" v-in-viewport>
+          <div class="col-12 col-md-4 q-px-lg anim" v-in-viewport.once>
             <q-btn class="q-ma-lg q-px-md" size="lg" @click="scrollMeTo('contact')" v-ripple>Request a meeting</q-btn>
             <p>Allowing executives, entrepreneurs, teams, talent and influencers to focus on their goals.</p>
           </div>
@@ -92,11 +92,11 @@
     <!-- </q-parallax> -->
     </div>
     <div class="main-section window-width parallax services row justify-center" ref="services" id="services">
-          <h2 class="full-width text-center anim q-pb-xl" v-in-viewport>SERVICES</h2>
-          <p class="col-10 anim-up q-pb-xl" v-in-viewport>
-            What could you do with an extra two hours in your day? Or twenty hours in your week, every week? Hit your rank? Build your team? Hit that next goal? Call your mom? Pick up your kids from school? Take real vacation time? Get more sleep? From our experience supporting business owners, CEO’s and social media influencers we know your back office is flooded, your phone is chiming constantly and your trying to keep all the juggling balls in the air, because dropping one means dropping them all. Outsourcing particular tasks and seeking support from a helping hand or even “another you” is a need you can’t afford to not have. We’ve designed our service model knowing one size doesn’t fit all.</p>
+          <h2 class="full-width text-center anim q-pb-xl" v-in-viewport.once>SERVICES</h2>
+          <p class="col-10 anim-up q-pb-xl" v-in-viewport.once>
+            What could you do with an extra two hours in your day? Or twenty hours in your week, every week? Hit your rank? Build your team? Hit that next goal? Call your mom? Pick up your kids from school? Take real vacation time? Get more sleep? From our experience supporting business owners, CEO’s and social media influencers we know your back office is flooded, your phone is chiming constantly and you're trying to keep all the juggling balls in the air, because dropping one means dropping them all. Outsourcing particular tasks and seeking support from a helping hand or even “another you” is a need you can’t afford to not have. We’ve designed our service model knowing one size doesn’t fit all.</p>
         <div class="row justify-between q-col-gutter-lg q-pa-xl items-strech">
-          <div class="col-12 col-sm-6 col-lg-3 service-list executive anim-delay" v-in-viewport>
+          <div class="col-12 col-sm-6 col-lg-3 service-list executive anim-delay" v-in-viewport.once>
             <div class="full-height">
             <h3>Executive</h3>
             <ul>
@@ -111,7 +111,7 @@
             </ul>
           </div>
           </div>
-          <div class="col-12 col-sm-6 col-lg-3 service-list personal anim-delay" v-in-viewport>
+          <div class="col-12 col-sm-6 col-lg-3 service-list personal anim-delay" v-in-viewport.once>
             <div class="full-height">
             <h3>Personal</h3>
             <ul>
@@ -125,7 +125,7 @@
             </ul>
           </div>
           </div>
-          <div class="col-12 col-sm-6 col-lg-3 service-list marketing anim-delay" v-in-viewport>
+          <div class="col-12 col-sm-6 col-lg-3 service-list marketing anim-delay" v-in-viewport.once>
             <div class="full-height">
             <h3>Marketing</h3>
             <ul>
@@ -136,7 +136,7 @@
             </ul>
           </div>
           </div>
-          <div class="col-12 col-sm-6 col-lg-3 service-list additional anim-delay" v-in-viewport>
+          <div class="col-12 col-sm-6 col-lg-3 service-list additional anim-delay" v-in-viewport.once>
             <div class="full-height">
             <h3>Additional</h3>
             <ul>
@@ -149,11 +149,11 @@
             </ul>
           </div>
           </div>
-          <p class="full-width q-ma-none text-center text-large q-pt-xl q-pb-md text-italic anim-delay in-viewport"  v-in-viewport> As a client-focused firm, you tell us what you need so we can see that need and meet it; delivering exactly what you pay for and more. So again, we ask, what would you do with an extra two hours in your day?</p>
+          <p class="full-width q-ma-none text-center text-large q-pt-xl q-pb-md text-italic anim-delay in-viewport"  v-in-viewport.once> As a client-focused firm, you tell us what you need so we can see that need and meet it; delivering exactly what you pay for and more. So again, we ask, what would you do with an extra two hours in your day?</p>
       </div>
     </div>
     <div class="main-section window-width flex items-center row justify-center about" ref="about" id="about">
-      <div class="col-10 col-md-4 text-center anim-down q-py-lg" v-in-viewport>
+      <div class="col-10 col-md-4 text-center anim-down q-py-lg" v-in-viewport.once>
         <q-img
           src="~assets/kirstie-bw.png"
           spinner-color="white"
@@ -162,8 +162,9 @@
           alt="Picture of Kirtie Segura"
         >
         </q-img>
+        <p class="text-italic q-pt-lg">Kirstie Segura, Founder & CEO</p>
       </div>
-      <div class="col-11 col-md-6 text-center anim-up" v-in-viewport>
+      <div class="col-11 col-md-6 text-center anim-up" v-in-viewport.once>
         <h2>WORK SMARTER NOT HARDER</h2>
           <ul class="q-pa-none">
             <li>No "One Size Fits All"</li>
@@ -175,17 +176,17 @@
         <p class="text-italic text-large">I'M JOINING YOUR TEAM</p>
         <p>With 18 years experience in customer care, executive operations and administration. LIVING BY  the core values to live with purpose and be of service to others! During my many years working behind the scenes with direct sales entrepreneurs and business owners, I continuously heard "I need another me". Now they say, "I NEED ANOTHER YOU!"</p>
       </div>
-      <div class="motif large anim-up" v-in-viewport></div>
-      <div class="motif small anim-down" v-in-viewport></div>
+      <div class="motif large anim-up" v-in-viewport.once></div>
+      <div class="motif small anim-down" v-in-viewport.once></div>
     </div>
     <div class="main-section window-width flex items-center row justify-center parallax pricing" ref="pricing" id="pricing">
-      <div class="anim" v-in-viewport>
-        <h2 class="full-width text-center anim" v-in-viewport>PRICING</h2>
+      <div class="anim" v-in-viewport.once>
+        <h2 class="full-width text-center anim" v-in-viewport.once>PRICING</h2>
         <p class="text-large text-center q-px-xl">Pricing is customized to your needs, time required and length of service. Prices below are for reference based on calendar week and subject to change.</p>
       </div>
       <div class=" q-px-sm row items-center justify-center">
         <div class="row justify-center col-12 col-sm-10">
-          <div class="flex items-center row full-width justify-center anim price q-pa-xl-md q-pa-lg" v-in-viewport>
+          <div class="flex items-center row full-width justify-center anim-left price q-pa-xl-md q-pa-lg" v-in-viewport.once>
             <div class="col-12 col-sm-4">
               <q-img
                 src="~assets/helpingprice.jpg"
@@ -203,7 +204,7 @@
               </p>
             </div>
           </div>
-          <div class="flex items-center row full-width justify-center anim price q-pa-xl-md q-pa-lg" v-in-viewport>
+          <div class="flex items-center row full-width justify-center anim-right price q-pa-xl-md q-pa-lg" v-in-viewport.once>
             <div class="col-12 col-sm-4 q-px-lg text-right">
               <h3 class="q-ma-none q-pt-lg">Another Me</h3>
               <p>Working as you or for you to interact with your team, inbox and to-do list to free you up for the freedoms you were originally after.<br/>
@@ -221,7 +222,7 @@
               </q-img>
             </div>
           </div>
-          <div class="flex items-center row full-width justify-center anim price q-pa-xl-md q-pa-lg" v-in-viewport>
+          <div class="flex items-center row full-width justify-center anim-left price q-pa-xl-md q-pa-lg" v-in-viewport.once>
             <div class="col-12 col-sm-4">
               <q-img
                 src="~assets/executiveprice.jpg"
@@ -238,7 +239,7 @@
                 <span class="text-italic">Starting At $925/week</span></p>
             </div>
           </div>
-          <div class="flex items-center row full-width justify-center anim price q-pa-xl-md q-pa-lg" v-in-viewport>
+          <div class="flex items-center row full-width justify-center anim-right price q-pa-xl-md q-pa-lg" v-in-viewport.once>
             <div class="col-12 col-sm-4 q-px-lg">
               <h3 class="q-ma-none q-pt-lg">Shared Assistant</h3>
               <p>Built to support your team’s collective and individual needs to ensure synergy and consistency within the organization.<br/>
@@ -258,7 +259,7 @@
           </div>
         </div>
       </div>
-      <div class="anim-left col-12 full-width text-center q-pb-lg" v-in-viewport>
+      <div class="anim-left col-12 full-width text-center q-pb-lg" v-in-viewport.once>
         <span class="text-italic">Project & Hourly Rates Available</span>
       </div>
     </div>
@@ -268,7 +269,7 @@
           <img alt="RoninDean Enterprises Logo" src="~assets/ronindean-logo-outline.svg" class="logo">
         </div>
       </div>
-      <div class="col-10 col-md-5 anim light" v-in-viewport>
+      <div class="col-10 col-md-5 anim light" v-in-viewport.once>
         <h2>Request a Meeting</h2>
         <!-- <p class="text-large">Use the form on this page or send us an <a class="light" href="mailto:info@ronindean.com" title="Mail RoninDean">email</a>
         </p> -->
@@ -325,7 +326,7 @@
         <p>To learn more about RoninDean follow us on Instagram <a href="https://www.instagram.com/ronindean/" target="_blank">&#64;ronindean</a>
         </p>
           </div>
-        <div class="motif large anim-up" v-in-viewport></div>
+        <div class="motif large anim-up" v-in-viewport.once></div>
       </div>
     </div>
       <q-page-scroller position="bottom-right" :scroll-offset="150" :offset="[18, 18]">

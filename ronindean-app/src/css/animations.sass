@@ -17,7 +17,7 @@
             background-position: 50% 0%
 
 $anim-size: 200px
-$anim-vars: all 1s ease 0.5s
+$anim-vars: all 0.5s ease 0.2s
 
 .anim 
     opacity: 0
@@ -28,32 +28,36 @@ $anim-vars: all 1s ease 0.5s
 
 .anim-delay 
     opacity: 0
-    transition: all 1s ease 1.5s
+    transition: all 0.5s ease 1s
  
 .anim-delay.in-viewport 
     opacity: 1
 
 .anim-left 
     opacity: 0
-    margin-left: $anim-size
+    position: relative
+    left: $anim-size
     transition: $anim-vars
  
 .anim-left.in-viewport 
     opacity: 1
-    margin-left: 0px
+    position: relative
+    left: 0px
 
 .anim-right 
     opacity: 0
-    margin-left: -($anim-size)
+    right: $anim-size
     transition: $anim-vars
  
 .anim-right.in-viewport 
     opacity: 1
-    margin-left: 0px
+    position: relative
+    right: 0px
 
 .anim-down 
     opacity: 0
-    margin-top: -($anim-size)
+    position: relative
+    margin-top: $anim-size
     transition: $anim-vars
  
 .anim-down.in-viewport 
