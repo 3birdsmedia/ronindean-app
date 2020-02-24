@@ -17,7 +17,7 @@
             <q-item-section @click="scrollMeTo('about')">About</q-item-section>
         </q-item>
         <q-item clickable name="Pricing">
-            <q-item-section @click="scrollMeTo('pricing')">Pricing</q-item-section>
+            <q-item-section @click="scrollMeTo('pricing')">Packages</q-item-section>
         </q-item>
         <q-item clickable name="Contact">
             <q-item-section @click="scrollMeTo('contact')">Contact</q-item-section>
@@ -180,9 +180,10 @@
       <div class="motif small anim-down" v-in-viewport.once></div>
     </div>
     <div class="main-section window-width flex items-center row justify-center parallax pricing" ref="pricing" id="pricing">
-      <div class="anim" v-in-viewport.once>
-        <h2 class="full-width text-center anim" v-in-viewport.once>PRICING</h2>
-        <p class="text-large text-center q-px-xl">Pricing is customized to your needs, time required and length of service. Prices below are for reference based on calendar week and subject to change.</p>
+      <div class="anim row justify-center" v-in-viewport.once>
+        <h2 class="full-width text-center anim" v-in-viewport.once>PACKAGES</h2>
+        <p class="text-large text-center q-px-xl full-width">Packages and pricing is customized to your needs, time required and length of service.</p>
+        <q-btn class="q-ma-lg q-px-md self-center" size="lg" @click="scrollMeTo('contact')" v-ripple>Request a meeting</q-btn>
       </div>
       <div class=" q-px-sm row items-center justify-center">
         <div class="row justify-center col-12 col-sm-10">
@@ -199,16 +200,14 @@
             </div>
             <div class="col-12 col-sm-4 q-px-lg">
               <h3 class="q-ma-none q-pt-lg">Hands To Serve</h3>
-              <p>Small weekly tasks and projects to give you the breathing room you need to focus on your priorities<br/>
-                <span class="text-italic">Starting At $350/week</span>
+              <p>Small weekly tasks and projects to give you the breathing room you need to focus on your priorities
               </p>
             </div>
           </div>
           <div class="flex items-center row full-width justify-center anim-right price q-pa-xl-md q-pa-lg" v-in-viewport.once>
             <div class="col-12 col-sm-4 q-px-lg text-right">
               <h3 class="q-ma-none q-pt-lg">Another Me</h3>
-              <p>Working as you or for you to interact with your team, inbox and to-do list to free you up for the freedoms you were originally after.<br/>
-              <span class="text-italic">Starting At $700/week</span>
+              <p>Working as you or for you to interact with your team, inbox and to-do list to free you up for the freedoms you were originally after.
               </p>
             </div>
             <div class="col-12 col-sm-4">
@@ -235,15 +234,13 @@
             </div>
             <div class="col-12 col-sm-4 q-px-lg">
               <h3 class="q-ma-none q-pt-lg">Executive/<wbr>Personal</h3>
-              <p>Operational and strategic assistants needed to run your business or life on your terms.<br/>
-                <span class="text-italic">Starting At $925/week</span></p>
+              <p>Operational and strategic assistants needed to run your business or life on your terms.</p>
             </div>
           </div>
           <div class="flex items-center row full-width justify-center anim-right price q-pa-xl-md q-pa-lg" v-in-viewport.once>
             <div class="col-12 col-sm-4 q-px-lg">
               <h3 class="q-ma-none q-pt-lg">Shared Assistant</h3>
               <p>Built to support your team’s collective and individual needs to ensure synergy and consistency within the organization.<br/>
-              <span class="text-italic">Starting At $200 Per Person Per Week</span>
               </p>
             </div>
             <div class="col-12 col-sm-4">
