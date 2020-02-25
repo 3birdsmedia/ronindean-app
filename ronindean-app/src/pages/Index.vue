@@ -182,7 +182,7 @@
     <div class="main-section window-width flex items-center row justify-center parallax pricing" ref="pricing" id="pricing">
       <div class="anim row justify-center" v-in-viewport.once>
         <h2 class="full-width text-center anim" v-in-viewport.once>PACKAGES</h2>
-        <p class="text-large text-center q-px-xl full-width">Packages and pricing is customized to your needs, time required and length of service.</p>
+        <p class="text-large text-center q-px-xl full-width">Packages and pricing are customized to your needs, time required and length of service.</p>
         <q-btn class="q-ma-lg q-px-md self-center" size="lg" @click="scrollMeTo('contact')" v-ripple>Request a meeting</q-btn>
       </div>
       <div class=" q-px-sm row items-center justify-center">
