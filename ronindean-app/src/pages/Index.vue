@@ -71,7 +71,7 @@
         <div class="col-12 col-sm-8 col-lg-6 q-pt-xl logo-container">
           <div class="full-width">
             <img alt="RoninDean Enterprises Logo" src="~assets/ronindean-logo-full.svg" class="logo q-pt-lg">
-            <h2 class="full-width q-ma-none q-px-sm q-px-none-md text-italic anim" v-in-viewport.once>Your exceptional and elegant virtual assistant, supporting the business behind your business.</h2>
+            <h2 class="full-width q-ma-none q-px-sm q-px-none-md text-italic anim" v-in-viewport.once>Your exceptional virtual assistant, supporting the business behind your business.</h2>
           </div>
         </div>
         <div class="full-width flex row justify-center">
@@ -316,9 +316,26 @@
               unmasked-value
               hint="Format: ###.###.####"
             />
+            <q-input
+              dark
+              label="Tell us a little more"
+              v-model="text"
+              filled
+              type="textarea"
+            />
             <div>
-              <q-btn :loading="sending" class="q-ma-lg q-px-md" size="lg" v-ripple label="Submit" type="submit"/>
+              <vue-recaptcha
+                ref="recaptcha"
+                @verify="onCaptchaVerified"
+                @expired="onCaptchaExpired"
+                :loadRecaptchaScript="true"
+                theme="dark"
+                sitekey="6Lcp69gZAAAAAPsCzfd3LCdGtEVHUJWgoY_w1LIh">
+              </vue-recaptcha>
+              <!--button :disabled="status==='submitting'" type="submit" class="button">sign up</button-->
+              <q-btn :loading="sending" class="q-ma-lg q-px-md" size="lg" v-ripple label="Submit" :disabled="status==='submitting'" type="submit" />
             </div>
+
           </q-form>
         <p>To learn more about RoninDean follow us on Instagram <a href="https://www.instagram.com/ronindean/" target="_blank">&#64;ronindean</a>
         </p>
@@ -338,10 +355,13 @@ import inViewportDirective from 'vue-in-viewport-directive'
 import { scroll } from 'quasar'
 import axios from 'axios'
 import { fasFont } from '@quasar/extras/fontawesome-v5'
+import VueRecaptcha from 'vue-recaptcha'
+
 Vue.directive('in-viewport', inViewportDirective)
 const { getScrollTarget, setScrollPosition } = scroll
 export default {
   name: 'Index',
+  components: { VueRecaptcha },
   create () {
     this.fasFont = fasFont
   },
