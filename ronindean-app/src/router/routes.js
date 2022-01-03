@@ -1,4 +1,3 @@
-
 const routes = [
   {
     path: '/',
@@ -6,6 +5,22 @@ const routes = [
     children: [
       { path: '', component: () => import('pages/Index.vue') },
       { path: '', name: 'Services', component: () => import('pages/Index.vue') }
+    ]
+  },
+  {
+    path: '/articles',
+    component: () => import('layouts/MyLayout.vue'),
+    children: [
+      {
+        path: '',
+        name: 'Articles',
+        component: () => import('pages/Articles.vue')
+      },
+      {
+        path: ':id',
+        name: 'Article',
+        component: () => import('pages/Article.vue')
+      }
     ]
   }
 ]
