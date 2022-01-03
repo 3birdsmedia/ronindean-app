@@ -7,7 +7,7 @@
       v-in-viewport.once
     >
       <q-img
-        src="~assets/kirstie-bw.png"
+        src="~assets/kirstie-new.jpg"
         spinner-color="white"
         style="width: 90%; border-radius:500px"
         img-class="responsive-image"
@@ -22,21 +22,22 @@
         <li>No "One Size Fits All"</li>
         <li>Our assistance is tailor-made to your needs</li>
         <li>
-          We cater to you: The Entrepreneur, The Small Business, The Influencer
+          We cater to you: The Executive, The Entrepreneur, The Small Business,
+          The Influencer
         </li>
         <li>
-          Dedicated to excellence, quality & value ("done" is not "better than
-          perfect")
+          Dedicated to excellence, quality & value
         </li>
       </ul>
-      <h2>PLEASURE TO MEET YOU</h2>
-      <p class="text-italic text-large">I'M JOINING YOUR TEAM</p>
+      <h2>MEET THE OWNER</h2>
+      <p class="text-italic text-large">WE ARE JOINING YOUR TEAM</p>
       <p>
-        With 18 years experience in customer care, executive operations and
-        administration. LIVING BY the core values to live with purpose and be of
-        service to others! During my many years working behind the scenes with
-        direct sales entrepreneurs and business owners, I continuously heard "I
-        need another me". Now they say, "I NEED ANOTHER YOU!"
+        With a combined 45 years experience in customer care, project
+        management, executive operations and administration. LIVING BY the core
+        values to live with purpose and be of service to others! During our many
+        years working behind the scenes with business owners like you, we
+        continuously heard "I need another me". Now they say, "I NEED ANOTHER
+        YOU!"
       </p>
     </div>
     <div class="motif large anim-up" v-in-viewport.once></div>

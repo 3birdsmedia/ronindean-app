@@ -5,15 +5,15 @@
     </h2>
     <p class="col-10 anim-up q-pb-xl" v-in-viewport.once>
       What could you do with an extra two hours in your day? Or twenty hours in
-      your week, every week? Hit your rank? Build your team? Hit that next goal?
-      Call your mom? Pick up your kids from school? Take real vacation time? Get
-      more sleep? From our experience supporting business owners, CEO’s and
-      social media influencers we know your back office is flooded, your phone
-      is chiming constantly and you're trying to keep all the juggling balls in
-      the air, because dropping one means dropping them all. Outsourcing
-      particular tasks and seeking support from a helping hand or even “another
-      you” is a need you can’t afford to not have. We’ve designed our service
-      model knowing one size doesn’t fit all.
+      your week, every week? Build your team? Grow your business? Hit that next
+      goal? Pick up your kids from school? Take real vacation time? Get more
+      sleep? From our 45 years of experience supporting business owners, CEO's
+      and social media influencers we know your back office is flooded, your
+      phone is chiming constantly and you're trying to keep all the juggling
+      balls in the air, because dropping one means dropping them all.
+      Outsourcing particular tasks and seeking support from your Executive
+      Assistant or even "another you" is a need you can't afford to not have.
+      We've designed our service model knowing one size doesn't fit all.
     </p>
     <div class="row justify-between q-col-gutter-lg q-pa-xl items-strech">
       <div
@@ -29,7 +29,7 @@
             <li>Travel arrangements</li>
             <li>Calendar management</li>
             <li>CRM management</li>
-            <li>Mailers</li>
+            <li>Project Management</li>
             <li>Online filing storage</li>
           </ul>
         </div>
@@ -62,6 +62,7 @@
             <li>Visual presentations</li>
             <li>Branding & collateral design</li>
             <li>Social media posting/responses</li>
+            <li>Mailers</li>
           </ul>
         </div>
       </div>
@@ -78,6 +79,7 @@
             <li>In-person assistance</li>
             <li>Projects</li>
             <li>Strategic planning</li>
+            <li>Bookkeeping</li>
           </ul>
         </div>
       </div>

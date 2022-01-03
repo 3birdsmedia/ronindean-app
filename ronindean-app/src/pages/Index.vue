@@ -17,8 +17,9 @@
             class="full-width q-ma-none q-px-sm q-px-none-md text-italic anim"
             v-in-viewport.once
           >
-            Your exceptional virtual assistant, supporting the business behind
-            your business.
+            A systems integration firm. Exceptional luxury assistance and
+            project management services, supporting the business behind your
+            business.
           </h2>
         </div>
       </div>
