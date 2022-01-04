@@ -24,7 +24,7 @@
         <div class=" anim-down q-py-md" v-in-viewport.once>
           <router-link :to="'/articles' + article.field_friendly_url">
             <q-img
-              :src="'http://api.ronindean.com/' + article.field_image"
+              :src="baseUrl + article.field_image"
               spinner-color="white"
               style="width: 50%; border-radius:500px"
               img-class="responsive-image"
@@ -53,6 +53,8 @@
 </template>
 <script>
 import axios from 'axios'
+import { Loading } from 'quasar'
+import { baseUrl } from '../../store/constants'
 export default {
   props: {
     limit: {
@@ -62,12 +64,14 @@ export default {
   },
   data() {
     return {
-      articles: null
+      articles: null,
+      baseUrl: baseUrl
     }
   },
   async created() {
     try {
-      let url = 'http://api.ronindean.com/api/articles/all'
+      Loading.show()
+      let url = baseUrl + 'api/articles/all'
       if (this.limit !== 0) {
         url = url + '&items_per_page=' + this.limit
       }
@@ -76,9 +80,11 @@ export default {
         .then(response => {
           this.articles = response.data
           console.log('Articles', response)
+          Loading.hide()
         })
       return articleResponse
     } catch (error) {
+      Loading.hide()
       throw error
     }
   }

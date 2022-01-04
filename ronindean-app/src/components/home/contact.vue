@@ -84,6 +84,7 @@
             </vue-recaptcha>
             <!--button :disabled="status==='submitting'" type="submit" class="button">sign up</button-->
             <q-btn
+              color="primary"
               :loading="sending"
               class="q-ma-lg q-px-md"
               size="lg"
@@ -112,7 +113,7 @@ export default {
   components: {
     VueRecaptcha
   },
-  data () {
+  data() {
     return {
       name: null,
       company: null,
@@ -125,17 +126,17 @@ export default {
     }
   },
   methods: {
-    captchaVerify (response) {
+    captchaVerify(response) {
       // when you need a reCAPTCHA challenge
       console.log('Captcha', response)
       if (response) {
         this.status = false
       }
     },
-    captchaExpired () {
+    captchaExpired() {
       this.status = true
     },
-    onSubmit () {
+    onSubmit() {
       // let formData = new FormData(document.getElementById('contact_us'))
       // console.log(this.name)
       let showmessage = () => {
@@ -179,12 +180,12 @@ export default {
           postData,
           axiosConfig
         )
-        .then(function (response) {
+        .then(function(response) {
           showmessage()
           // console.log(successMessage)
           // console.log(response)
         })
-        .catch(function (error) {
+        .catch(function(error) {
           console.log(error)
         })
     }

@@ -22,7 +22,7 @@
           </slot>
         </div>
       </q-parallax>
-      <div class="q-pa-xl container" v-html="article.body"></div>
+      <div class="q-pa-xl container text-left" v-html="article.body"></div>
     </div>
     <home-about ref="about" id="about" />
     <home-contact ref="contact" id="contact" />
@@ -38,6 +38,8 @@
 </template>
 <script>
 import axios from 'axios'
+import { baseUrl } from '../store/constants'
+import { Loading } from 'quasar'
 import GlobalHeader from '../components/global/secondary-header.vue'
 import HomeAbout from '../components/home/about.vue'
 import HomeContact from '../components/home/contact.vue'
@@ -58,15 +60,18 @@ export default {
   async created() {
     const id = this.$route.params.id
     try {
-      let url = 'http://api.ronindean.com/api/articles/all?url_mask=/' + id
+      Loading.show()
+      let url = baseUrl + 'api/articles/all?url_mask=/' + id
       const articleResponse = await axios
         .get(url + '&_format=json')
         .then(response => {
           this.article = response.data[0]
           console.log('Article', response)
+          Loading.hide()
         })
       return articleResponse
     } catch (error) {
+      Loading.hide()
       throw error
     }
   }

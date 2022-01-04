@@ -26,6 +26,7 @@
       <div class="full-width flex row justify-center">
         <div class="col-12 col-md-4 q-px-lg divider anim" v-in-viewport.once>
           <q-btn
+            color="primary"
             class="q-ma-lg q-px-md"
             size="lg"
             @click="scrollMeTo('services')"
@@ -39,6 +40,7 @@
         </div>
         <div class="col-12 col-md-4 q-px-lg anim" v-in-viewport.once>
           <q-btn
+            color="primary"
             class="q-ma-lg q-px-md"
             size="lg"
             @click="scrollMeTo('contact')"
@@ -67,6 +69,7 @@
     </div>
     <home-services ref="services" id="services" />
     <home-about ref="about" id="about" />
+    <home-testimonials ref="testimonials" id="testimonials" />
     <home-packages ref="pricing" id="pricing" />
     <home-articles ref="resources" id="resources">
       <template v-slot:view-more>
@@ -88,6 +91,7 @@
 import GlobalHeader from '../components/global/header.vue'
 import HomeServices from '../components/home/services.vue'
 import HomeAbout from '../components/home/about.vue'
+import HomeTestimonials from '../components/home/testimonials.vue'
 import HomePackages from '../components/home/packages.vue'
 import HomeArticles from '../components/home/articles.vue'
 import HomeContact from '../components/home/contact.vue'
@@ -97,6 +101,7 @@ export default {
     GlobalHeader,
     HomeServices,
     HomeAbout,
+    HomeTestimonials,
     HomePackages,
     HomeArticles,
     HomeContact

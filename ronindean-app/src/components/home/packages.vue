@@ -53,6 +53,7 @@
         </div>
       </div>
       <q-btn
+        color="primary"
         class="q-ma-lg q-px-md self-center"
         size="lg"
         @click="scrollMeTo('contact')"

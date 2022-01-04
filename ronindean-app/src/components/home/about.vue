@@ -1,6 +1,6 @@
 <template>
   <div
-    class="main-section window-width flex items-center row justify-center about"
+    class="main-section window-width flex items-center row justify-center about q-pb-xl"
   >
     <div
       class="col-10 col-md-4 text-center anim-down q-py-lg"
