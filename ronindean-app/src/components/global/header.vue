@@ -29,10 +29,8 @@
             >Packages</q-item-section
           >
         </q-item>
-        <q-item clickable name="Resources">
-          <q-item-section @click="scrollMeTo('resources')"
-            >Resources</q-item-section
-          >
+        <q-item clickable name="Resources"
+          ><router-link to="/articles">Resources</router-link>
         </q-item>
         <q-item clickable name="Contact">
           <q-item-section @click="scrollMeTo('contact')"
@@ -71,10 +69,8 @@
             >Pricing</q-item-section
           >
         </q-item>
-        <q-item clickable name="Resources">
-          <q-item-section @click="scrollMeTo('resources')"
-            >Resources</q-item-section
-          >
+        <q-item clickable name="Resources"
+          ><router-link to="/articles">Resources</router-link>
         </q-item>
         <q-item clickable name="Contact">
           <q-item-section @click="scrollMeTo('contact')"

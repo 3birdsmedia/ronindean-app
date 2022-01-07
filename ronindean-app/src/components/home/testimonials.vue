@@ -1,34 +1,56 @@
 <template>
-  <div class="row justify-center testimonials hero full-width q-pb-xl">
-    <div class="anim row justify-center" v-in-viewport.once>
-      <h3 class="full-width text-center anim" v-in-viewport.once>
-        What are people saying
-      </h3>
+  <div
+    class="row justify-center testimonials hero full-width q-py-xl relative-position"
+  >
+    <div
+      class="col-8 col-sm-6 col-md-3 row justify-center text-center anim-down items-center"
+      v-in-viewport.once
+    >
+      <div class="full-width q-py-xl">
+        <q-img
+          src="~assets/team-blurred.jpg"
+          spinner-color="white"
+          style="width: 90%; border-radius:500px"
+          img-class="responsive-image"
+          alt="The RoninDean Team"
+        />
+      </div>
     </div>
-    <div class="row justify-center full-width" v-in-viewport.once>
-      <q-carousel
-        v-model="slide"
-        swipeable
-        animated
-        arrows
-        padding
-        infinite
-        control-color="primary"
-        class="container row"
-        style="background:none"
+    <div class="col-12 col-md-8 anim row justify-center" v-in-viewport.once>
+      <h3
+        class="full-width text-center anim q-my-sm text-uppercase"
+        v-in-viewport.once
       >
-        <q-carousel-slide
-          v-for="(testimonial, index) in testimonials"
-          :key="index"
-          :name="index"
-          class="full-width text-center flex items-center"
+        What our clients are saying
+      </h3>
+      <div class="row justify-center full-width" v-in-viewport.once>
+        <q-carousel
+          v-model="slide"
+          swipeable
+          animated
+          arrows
+          padding
+          infinite
+          autoplay="2500"
+          control-color="primary"
+          class="container row"
+          style="background:none"
         >
-          <div class="full-width">
-            <div class="text-small full-width" v-html="testimonial.body" />
-          </div>
-        </q-carousel-slide>
-      </q-carousel>
+          <q-carousel-slide
+            v-for="(testimonial, index) in testimonials"
+            :key="index"
+            :name="index"
+            class="full-width text-center flex items-center"
+          >
+            <div class="full-width">
+              <div class="text-small full-width" v-html="testimonial.body" />
+            </div>
+          </q-carousel-slide>
+        </q-carousel>
+      </div>
     </div>
+    <div class="motif large anim-up" v-in-viewport.once></div>
+    <div class="motif small anim-down" v-in-viewport.once></div>
   </div>
 </template>
 <script>

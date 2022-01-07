@@ -8,20 +8,22 @@
       </h2>
 
       <div
-        class="flex items-center row full-width justify-center anim-left price q-pa-xl-md q-pa-lg q-pt-none border-bottom"
+        class="row items-center full-width justify-center q-py-xl anim-left"
         v-in-viewport.once
       >
-        <div class="col-12 col-sm-6  col-md-4">
+        <div
+          class="col-12 col-sm-5 col-md-4 col-lg-3 q-px-xs-xl q-px-sm-sm q-py-md"
+        >
           <q-img
             src="~assets/executiveprice.jpg"
             spinner-color="white"
             style="border-radius:500px"
             img-class="responsive-image"
-            alt="Picture of Kirtie Segura"
+            alt="Picture of assistant writting on board"
           >
           </q-img>
         </div>
-        <div class="col-12 col-sm-6  col-md-4 q-px-lg">
+        <div class="col-12 col-sm-6 col-md-4 q-px-xl">
           <p>
             Our team is dedicated to a long-term commitment to you, your team,
             and your business success. We understand high quality excellent
@@ -31,23 +33,25 @@
         </div>
       </div>
       <div
-        class="flex items-center row full-width justify-center anim-right price q-pa-xl-md q-pa-lg"
+        class="row items-center full-width justify-center anim-right"
         v-in-viewport.once
       >
-        <div class="col-12 col-sm-6  col-md-4 q-px-lg">
+        <div class="col-12 col-sm-6 col-md-4 q-px-xl">
           <p>
             From part-time administrative assistance to project management, from
             full-time luxury assistance to executive operations and shared team
             assistance.
           </p>
         </div>
-        <div class="col-12 col-sm-6  col-md-4">
+        <div
+          class="col-12 col-sm-5 col-md-4 col-lg-3 q-px-xs-sm q-px-xs-xl q-px-sm-sm q-py-md"
+        >
           <q-img
             src="~assets/sharedprice.jpg"
             spinner-color="white"
             style="border-radius:500px"
             img-class="responsive-image"
-            alt="Picture of Kirtie Segura"
+            alt="Picture of assistants meeting"
           >
           </q-img>
         </div>

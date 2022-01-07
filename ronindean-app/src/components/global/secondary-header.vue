@@ -56,6 +56,11 @@
     </q-header>
     <q-drawer side="right" overlay v-model="drawer" content-class="nav">
       <q-list :refs="$refs" class="column text-right">
+        <q-item clickable name="Home">
+          <router-link to="/">
+            <q-icon clickable name="home" size="24px" class="q-ml-xs" />
+          </router-link>
+        </q-item>
         <q-item clickable name="Services">
           <router-link to="/">
             Services

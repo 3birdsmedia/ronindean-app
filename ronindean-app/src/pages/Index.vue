@@ -71,11 +71,11 @@
     <home-about ref="about" id="about" />
     <home-testimonials ref="testimonials" id="testimonials" />
     <home-packages ref="pricing" id="pricing" />
-    <home-articles ref="resources" id="resources">
+    <!-- <home-articles ref="resources" id="resources">
       <template v-slot:view-more>
         <router-link to="/articles" class="q-pa-lg">view more</router-link>
       </template>
-    </home-articles>
+    </home-articles> -->
     <home-contact ref="contact" id="contact" />
 
     <q-page-scroller
@@ -93,7 +93,7 @@ import HomeServices from '../components/home/services.vue'
 import HomeAbout from '../components/home/about.vue'
 import HomeTestimonials from '../components/home/testimonials.vue'
 import HomePackages from '../components/home/packages.vue'
-import HomeArticles from '../components/home/articles.vue'
+// import HomeArticles from '../components/home/articles.vue'
 import HomeContact from '../components/home/contact.vue'
 
 export default {
@@ -103,7 +103,7 @@ export default {
     HomeAbout,
     HomeTestimonials,
     HomePackages,
-    HomeArticles,
+    // HomeArticles,
     HomeContact
   },
   data() {

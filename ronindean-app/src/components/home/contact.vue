@@ -192,3 +192,20 @@ export default {
   }
 }
 </script>
+<style lang="sass" scoped>
+.contact
+    background: $dark
+    .contact-logo:after
+        display: block
+        position: absolute
+        top: 0
+        width: 100%
+        height: 100%
+        content: " "
+        background: linear-gradient(135deg,rgba(29,29,29,0) 45%,rgba(29,29,29,.3) 50%,rgba(29,29,29,0) 51%)
+        background-size: 750% 750%
+        animation: shine 3.5s linear infinite
+    .contact-logo
+        .logo
+            width: 90%
+</style>
