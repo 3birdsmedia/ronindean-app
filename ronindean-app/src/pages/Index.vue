@@ -29,7 +29,7 @@
             color="primary"
             class="q-ma-lg q-px-md"
             size="lg"
-            @click="scrollMeTo('services')"
+            @click="eventBus.$emit('scrollMeTo', 'services')"
             v-ripple
             >Learn More</q-btn
           >
@@ -43,7 +43,7 @@
             color="primary"
             class="q-ma-lg q-px-md"
             size="lg"
-            @click="scrollMeTo('contact')"
+            @click="eventBus.$emit('scrollMeTo', 'contact')"
             v-ripple
             >Request a meeting</q-btn
           >
@@ -88,6 +88,9 @@
   </q-page>
 </template>
 <script>
+import { scroll } from 'quasar'
+const { getScrollTarget, setScrollPosition } = scroll
+import eventBus from '../store/constants'
 import GlobalHeader from '../components/global/header.vue'
 import HomeServices from '../components/home/services.vue'
 import HomeAbout from '../components/home/about.vue'
@@ -109,8 +112,27 @@ export default {
   data() {
     return {
       wh: window.innerHeight,
-      refs: this.$refs
+      refs: this.$refs,
+      eventBus: eventBus
     }
+  },
+  mounted() {
+    eventBus.$on('scrollMeTo', refName => {
+      this.drawer = false
+      // console.log('Ref name', refName)
+      this.$nextTick(function() {
+        // console.log('Refs', this.$refs)
+        // console.log('Refs from prop', this.refs)
+        let el = this.refs[refName]
+        // console.log('El', el)
+        const target = getScrollTarget(el.$el)
+        // console.log('Target', target)
+        const offset = el.$el.offsetTop
+        // console.log(offset)
+        const duration = 1000
+        setScrollPosition(target, offset, duration)
+      })
+    })
   }
 }
 </script>

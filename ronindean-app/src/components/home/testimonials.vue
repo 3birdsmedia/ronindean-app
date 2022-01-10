@@ -31,7 +31,7 @@
           arrows
           padding
           infinite
-          autoplay="2500"
+          autoplay
           control-color="primary"
           class="container row"
           style="background:none"

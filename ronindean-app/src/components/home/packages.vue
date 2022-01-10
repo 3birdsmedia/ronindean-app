@@ -60,10 +60,21 @@
         color="primary"
         class="q-ma-lg q-px-md self-center"
         size="lg"
-        @click="scrollMeTo('contact')"
+        @click="eventBus.$emit('scrollMeTo', 'contact')"
         v-ripple
         >Request a meeting</q-btn
       >
     </div>
   </div>
 </template>
+<script>
+import eventBus from '../../store/constants'
+
+export default {
+  data() {
+    return {
+      eventBus: eventBus
+    }
+  }
+}
+</script>
