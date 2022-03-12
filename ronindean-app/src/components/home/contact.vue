@@ -108,6 +108,8 @@
 </template>
 <script>
 import axios from 'axios'
+import { baseUrl } from '../../store/constants'
+import { Notify } from 'quasar'
 import VueRecaptcha from 'vue-recaptcha'
 export default {
   components: {
@@ -137,58 +139,127 @@ export default {
       this.status = true
     },
     onSubmit() {
-      // let formData = new FormData(document.getElementById('contact_us'))
-      // console.log(this.name)
       let showmessage = () => {
         this.sending = false
         this.dialog = true
       }
-      this.sending = true
-      // let successMessage = 'We are grateful for your interest and honor your time. We will respond to you within 24 hours of receipt to schedule our time together.'
-      // axios.get('https://api.ronindean.com/rest/session/token', axiosConfig)
-      const axiosConfig = {
-        headers: {
-          'Content-Type': 'application/json; charset=UTF-8',
-          'Access-Control-Allow-Methods': '*',
-          'Access-Control-Allow-Headers': '*',
-          'Access-Control-Allow-Origin': '*',
-          'X-CSRF-Token': 'a75wvkZ0VOr1EiPVAikfSsPlvrXPm0F79JsgiMJUrmU',
-          Authorization: 'Basic bXNlZ3VyYTpLUGRyZWFtMCE='
-        }
-      }
-      const postData = {
-        contact_form: [{ target_id: 'contact_us' }],
-        name: [{ value: this.name }],
-        mail: [{ value: this.email }],
-        subject: [{ value: 'You have an inquiry' }],
-        message: [
-          {
-            value:
-              this.name +
-              ' from ' +
-              this.company +
-              ' wants to know more about RoninDean, contact them at ' +
-              this.email +
-              ' | ' +
-              this.tel
-          }
-        ]
-      }
       axios
-        .post(
-          'https://api.ronindean.com/contact_message?_format=json',
-          postData,
-          axiosConfig
-        )
-        .then(function(response) {
-          showmessage()
-          // console.log(successMessage)
-          // console.log(response)
+        .get(baseUrl + 'session/token')
+        .then(response => {
+          this.token = response.data
+          console.log('response', response.data)
         })
-        .catch(function(error) {
+        .catch(error => {
           console.log(error)
+          // Notify.create({
+          //   color: 'negative',
+          //   position: 'top',
+          //   message: 'Something went wrong, please try again'
+          // })
+        })
+        .finally(() => {
+          // console.log('Token', this.token)
+          const headers = {
+            headers: {
+              Accept: 'json',
+              'Content-Type': 'application/json; charset=UTF-8',
+              'X-CSRF-Token': this.token
+            }
+          }
+          let text = ''
+          text += this.name
+          text += this.company ? ' from ' + this.company : ''
+          text +=
+            ' wants to know more about RoninDean, contact them at ' +
+            this.email +
+            ' | ' +
+            this.tel
+          const postData = {
+            webform_id: 'contact',
+            name: this.name,
+            subject: "You got an email from ronidean.com's contact form",
+            email: this.email,
+            message: text
+          }
+          axios
+            .post(baseUrl + 'webform_rest/submit', postData, headers)
+            .then(response => {
+              // Notify.create({
+              //   color: 'positive',
+              //   position: 'top',
+              //   message:
+              //     'Your message was sent, please give us 1-2 business days to reply'
+              // })
+              console.log('contanct response', response)
+              showmessage()
+            })
+            .catch(error => {
+              console.log(error)
+              Notify.create({
+                color: 'negative',
+                position: 'top',
+                message:
+                  'Something went wrong, please check your username/password'
+              })
+            })
+            .finally(() => {
+              this.loading = false
+            })
         })
     }
+    // onSubmit() {
+    //   // let formData = new FormData(document.getElementById('contact_us'))
+    //   // console.log(this.name)
+    //   let showmessage = () => {
+    //     this.sending = false
+    //     this.dialog = true
+    //   }
+    //   this.sending = true
+    //   // let successMessage = 'We are grateful for your interest and honor your time. We will respond to you within 24 hours of receipt to schedule our time together.'
+    //   // axios.get('https://api.ronindean.com/rest/session/token', axiosConfig)
+    //   const axiosConfig = {
+    //     headers: {
+    //       'Content-Type': 'application/json; charset=UTF-8',
+    //       'Access-Control-Allow-Methods': '*',
+    //       'Access-Control-Allow-Headers': '*',
+    //       'Access-Control-Allow-Origin': '*',
+    //       'X-CSRF-Token': 'a75wvkZ0VOr1EiPVAikfSsPlvrXPm0F79JsgiMJUrmU',
+    //       Authorization: 'Basic bXNlZ3VyYTpLUGRyZWFtMCE='
+    //     }
+    //   }
+    //   const postData = {
+    //     contact_form: [{ target_id: 'contact_us' }],
+    //     name: [{ value: this.name }],
+    //     mail: [{ value: this.email }],
+    //     subject: [{ value: 'You have an inquiry' }],
+    //     message: [
+    //       {
+    //         value:
+    //           this.name +
+    //           ' from ' +
+    //           this.company +
+    //           ' wants to know more about RoninDean, contact them at ' +
+    //           this.email +
+    //           ' | ' +
+    //           this.tel
+    //       }
+    //     ]
+    //   }
+    //   axios
+    //     .post(
+    //       'https://api.ronindean.com/contact_message?_format=json',
+    //       postData,
+    //       axiosConfig
+    //     )
+    //     .then(function(response) {
+    //       showmessage()
+    //       // console.log(successMessage)
+    //       // console.log(response)
+    //     })
+    //     .catch(function(error) {
+    //       console.log(error)
+    //     })
+    // }
   }
 }
 </script>
