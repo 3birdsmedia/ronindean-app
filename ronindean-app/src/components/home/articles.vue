@@ -76,11 +76,7 @@ export default {
         url = url + '&items_per_page=' + this.limit
       }
       const articleResponse = await axios
-        .get(url + '?_format=json', {
-          headers: {
-            'Access-Control-Expose-Headers': '*'
-          }
-        })
+        .get(url + '?_format=json')
         .then(response => {
           this.articles = response.data
           console.log('Articles', response)
